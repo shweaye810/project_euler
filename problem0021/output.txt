@@ -1,0 +1,13 @@
+1
+220 and 284 is equal. Sum is 284 and 220
+284 and 220 is equal. Sum is 220 and 284
+1184 and 1210 is equal. Sum is 1210 and 1184
+1210 and 1184 is equal. Sum is 1184 and 1210
+2620 and 2924 is equal. Sum is 2924 and 2620
+2924 and 2620 is equal. Sum is 2620 and 2924
+5020 and 5564 is equal. Sum is 5564 and 5020
+5564 and 5020 is equal. Sum is 5020 and 5564
+6232 and 6368 is equal. Sum is 6368 and 6232
+6368 and 6232 is equal. Sum is 6232 and 6368
+2
+31626
