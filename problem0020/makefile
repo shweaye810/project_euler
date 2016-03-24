@@ -7,19 +7,19 @@
 # We can also use variables in our makefile, to make it easier to change
 # compilers, or compilation flags.  The variable values are substituted
 # wherever you see the $(VARIABLE) in the makefile
-CC=g++ -std=c++11
+CC=g++ -std=c++1y
 CFLAGS=-c -g -Wall
+LIB_DIR=../big_int
 
 all: driver
+	$(MAKE) -C $(LIB_DIR)
 
-driver: problem20.o big_int.o
-	$(CC) problem20.o big_int.o -g -o driver
+driver: problem20.o $(LIB_DIR)/big_int.o
+	$(CC) problem20.o $(LIB_DIR)/big_int.o -g -o driver
 
 problem20.o: problem20.cpp
 	$(CC) $(CFLAGS) problem20.cpp
 
-big_int.o: big_int.h big_int.cpp
-	$(CC) $(CFLAGS) big_int.cpp
-
 clean:
 	rm -f *.o driver
+	cd $(LIB_DIR); make clean

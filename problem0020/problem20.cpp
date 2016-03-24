@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-#include "big_int.h"
+#include "../big_int/big_int.h"
 
 using namespace std;
 
