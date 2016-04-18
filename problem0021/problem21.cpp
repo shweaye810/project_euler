@@ -1,6 +1,7 @@
 #include <iostream>
 
-#include "divisor.h"
+#include "../divisor/divisor.h"
+
 using namespace std;
 
 int main()
