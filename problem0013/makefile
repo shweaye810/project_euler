@@ -1,18 +1,18 @@
 CC = g++ -std=c++1y
 CFLAGS = -c -g -Wall
-LIB_DIR = ../big_int
+LIB = big_int
+LIB_LOC = ../$(LIB)/$(LIB)
+PROG = problem13
 
-prog = problem13
+$(PROG).out: $(PROG).o $(LIB).o
+	$(CC) $^ -g -o $(PROG).out
 
-$(prog).out: $(prog).o big_int.o
-	$(CC) $^ -g -o $(prog).out
+$(PROG).o: $(PROG).cpp
+	$(CC) $(CFLAGS) $<
 
-$(prog).o: $(prog).cpp
-	$(CC) $(CFLAGS) $^
-
-big_int.o: $(LIB_DIR)/big_int.cpp $(LIB_DIR)/big_int.h
-	$(CC) $(CFLAGS) $^
+$(LIB).o: $(LIB_LOC).cpp $(LIB_LOC).h
+	$(CC) $(CFLAGS) $<
 
 .PHONY:clean
 clean:
-	-rm -f *.o driver
+	-rm -f *.o *.out
