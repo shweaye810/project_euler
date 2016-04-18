@@ -1,25 +1,17 @@
-# Makefile entries are arranged as sets of targets to build, dependencies
-# required to build that target, and the system command to build the target:
-#
-# target: dependencies
-# [tab] system_command
-#
-# We can also use variables in our makefile, to make it easier to change
-# compilers, or compilation flags.  The variable values are substituted
-# wherever you see the $(VARIABLE) in the makefile
-CC=g++ -std=c++11
-CFLAGS=-c -g -Wall
+CC = g++ -std=c++1y
+CFLAGS = -c -g -Wall
+LIB = calendar
+PROG = problem19
 
-all: driver
+$(PROG).out: $(PROG).o $(LIB).o
+	$(CC) $^ -g -o $(PROG).out
 
-driver: problem19.o calendar.o
-	$(CC) problem19.o calendar.o -g -o driver
+$(PROG).o: $(PROG).cpp
+	$(CC) $(CFLAGS) $^
 
-problem19.o: problem19.cpp
-	$(CC) $(CFLAGS) problem19.cpp
+$(LIB).o: $(LIB).cpp $(LIB).h
+	$(CC) $(CFLAGS) $^
 
-calendar.o: calendar.cpp calendar.h
-	$(CC) $(CFLAGS) calendar.cpp
-
+.PHONY:clean
 clean:
-	rm -f *.o driver
+	-rm -f *.o *.out
