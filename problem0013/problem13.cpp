@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "big_int.h"
+#include "../big_int/big_int.h"
 
 using namespace std;
 
