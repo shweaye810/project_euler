@@ -38,7 +38,7 @@ Big_Int::Big_Int(const Big_Int &other) : sz(other.sz)
         num[i] = other.num[i];
 }
 
-const Big_Int& Big_Int::operator+(const Big_Int &o)
+const Big_Int &Big_Int::operator+(const Big_Int &o) const
 {
     unique_ptr<Big_Int> tmp(new Big_Int);
     for (int i = o.size() - 1; i >= 0; i--) {
@@ -51,13 +51,13 @@ const Big_Int& Big_Int::operator+(const Big_Int &o)
     return *tmp;
 }
 
-const Big_Int& Big_Int::operator+=(const Big_Int &o)
+const Big_Int &Big_Int::operator+=(const Big_Int &o)
 {
     *this = *this + o;
     return *this;
 }
 
-const Big_Int& Big_Int::operator*(const Big_Int &o)
+const Big_Int &Big_Int::operator*(const Big_Int &o) const
 {
     unique_ptr<Big_Int> tmp(new Big_Int);
     for (int i = o.size() - 1; i >= 0; i--) {
@@ -73,12 +73,12 @@ const Big_Int& Big_Int::operator*(const Big_Int &o)
     return *tmp;
 }
 
-const Big_Int& Big_Int::operator*=(const Big_Int &o)
+const Big_Int &Big_Int::operator*=(const Big_Int &o)
 {
     *this = *this * o;
     return *this;
 }
-ostream& operator<<(ostream &out, const Big_Int &o)
+ostream &operator<<(ostream &out, const Big_Int &o)
 {
     bool num_start = false;
     for (int i = 0; i < o.size(); i++) {
@@ -90,7 +90,7 @@ ostream& operator<<(ostream &out, const Big_Int &o)
     return out;
 }
 
-int Big_Int::size() const
+const int Big_Int::size() const
 {
     return sz;
 }

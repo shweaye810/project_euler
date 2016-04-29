@@ -11,12 +11,12 @@ public:
     Big_Int();
     Big_Int(const std::string &s);
     Big_Int(const Big_Int &other);
-    const Big_Int& operator+(const Big_Int &o);
-    const Big_Int& operator+=(const Big_Int &o);
-    const Big_Int& operator*(const Big_Int &o);
-    const Big_Int& operator*=(const Big_Int &o);
-    friend std::ostream& operator<<(std::ostream &out, const Big_Int &o);
-    int size() const;
+    const Big_Int &operator+(const Big_Int &o) const;
+    const Big_Int &operator+=(const Big_Int &o);
+    const Big_Int &operator*(const Big_Int &o) const;
+    const Big_Int &operator*=(const Big_Int &o);
+    friend std::ostream &operator<<(std::ostream &out, const Big_Int &o);
+    const int size() const;
 private:
     long long num[ARY_SIZE];
     int sz;
