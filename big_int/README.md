@@ -1,1 +1,1 @@
-an object which holds larger number than long long int, currently setting holds up to 180 digits(increasing ARY_SIZE to achieve higher digits), and support additions and multiplications. 
+A class which holds larger numbers than long long int, current setting holds up to 180 digits(increase ARY_SIZE to achieve higher digits), and support additions and multiplications. 
